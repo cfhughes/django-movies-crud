@@ -23,7 +23,13 @@
               Description
             </th>
             <th>
+              Actors
+            </th>
+            <th>
               Edit
+            </th>
+            <th>
+              Add Actor
             </th>
             <th>
               Delete
@@ -40,7 +46,15 @@
               {{movie.description}}
             </td>
             <td>
+              {% for actor in movie.actors.all %}
+                <a href="actor/{{actor.id}}">{{actor.name}}</a>, 
+              {% endfor %}
+            </td>
+            <td>
               <a href="edit_movie/{{movie.id}}">Edit</a>
+            </td>
+            <td>
+              <a href="add_actor/{{movie.id}}">Add Actor</a>
             </td>
             <td>
               <a href="delete_movie/{{movie.id}}">Delete</a>
